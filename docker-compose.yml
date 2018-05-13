@@ -1,0 +1,14 @@
+version: '2'
+services:
+  node:
+    networks:
+      - default
+    build:
+      context: .
+      dockerfile: Dockerfile
+    labels:
+      lagoon.type: node
+    volumes:
+      - .:/app:delegated
+    ports:
+      - "3000:3000"
